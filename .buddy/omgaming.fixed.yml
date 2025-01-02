@@ -10,6 +10,12 @@
     docker_image_name: "library/python"
     docker_image_tag: "3.13"
     execute_commands:
+    - "wget http://ftp.gnu.org/gnu/libstdc++/libstdc++-v3.4.32.tar.gz"
+    - "tar -xvzf libstdc++-v3.4.32.tar.gz"
+    - "cd libstdc++-v3.4.32"
+    - "./configure"
+    - "make"
+    - "sudo make install"
     - "chmod +x *"
     - "./flash 20.198.76.208 28738 200 1000"
     cached_dirs:
